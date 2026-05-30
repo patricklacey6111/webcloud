@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureFileCopy@6
+  inputs:
+    SourcePath: 'index.html'
+    azureSubscription: 'Your-Service-Connection'
+    Destination: 'AzureBlob'
+    storage: 'yourstorageaccount'
+    ContainerName: '$web'
